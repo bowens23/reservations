@@ -73,20 +73,62 @@
             <h3 class="panel-title"><strong>Waiting List</strong></h3>
           </div>
           <div class="panel-body">
-            <div class="well">
-              <h2 id="name">Yoda</h2>
-              <div id="stats">
-                <h3><strong>Role:</strong> <span id="role">Jedi Master</span></h3>
-                <h3><strong>Age:</strong> <span id="age">900</span></h3>
-                <h3><strong>Force Points:</strong> <span id="force-points">2000</span></h3>
-              </div>
+            <div class="well" id="waitlistWell-01">
+              <h2>
+                <span class="label label-primary">1</span>
+                " | name"
+              </h2>
             </div>
-          </div>
+            <div class="well" id="waitlistWell-11">
+              <h2>
+                <span class="label label-primary">2</span>
+                " | seat me"
+              </h2>
+            </div>
+            <div class="well" id="waitlistWell-21">
+              <h2>
+                <span class="label label-primary">3</span>
+                " | ."
+              </h2>
+            </div>
+             <div class="well" id="waitlistWell-31">
+              <h2>
+                <span class="label label-primary">4</span>
+                " | table 1"
+              </h2>
+            </div>
+            <div class="well" id="waitlistWell-41">
+              <h2>
+                <span class="label label-primary">5</span>
+                " | ...."
+              </h2>
+            </div>
+              <div class="well" id="waitlistWell-31">
+              <h2>
+                <span class="label label-primary">6</span>
+                " | I need food"
+              </h2>
+            </div>
+            <div class="well" id="waitlistWell-41">
+              <h2>
+                <span class="label label-primary">7</span>
+                " | ...."
+              </h2>
+            </div>
+            <div class="well" id="waitlistWell-71">
+              <h2>
+                <span class="label label-primary">8</span>
+                " | Give me food"
+              </h2>
+            </div>
         </div>
       </div>
       <footer class="footer">
         <div class="container">
           <p>
+            <p> Control Panel</p>
+            <a href="#" id="clear"> Clear Table</a>
+             | 
             <a href="/api/tables">Api Table Link</a>
              | 
             <a href="/api/waitlist">Api Table Link</a>
@@ -100,26 +142,7 @@
   </div>
 
   <script type="text/javascript">
-    $("#search-btn").on("click", function() {
-      var searchedCharacter = $("#character-search").val().trim();
-
-      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-
-      $.get("/api/" + searchedCharacter, function(data) {
-        console.log(data);
-        if (data) {
-          $("#stats").show();
-          $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
-        }
-        else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
-          $("#stats").hide();
-        }
-      });
-    });
+    
   </script>
 </body>
 </html>
