@@ -32,6 +32,10 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/reserve", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
 // create new reservation
 app.post("/reserve", function(req, res) {
   var newReservation = req.body;
